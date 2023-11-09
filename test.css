@@ -1,0 +1,314 @@
+:root {
+    --clr-primary-blue: 246, 80%, 60%;
+
+    --clr-accent-work: 15, 100%, 70%;
+    --clr-accent-play: 195, 74%, 62%;
+    --clr-accent-study: 348, 100%, 68%;
+    --clr-accent-exercise: 145, 58%, 55%;
+    --clr-accent-social: 264, 64%, 52%;
+    --clr-accent-self-care: 43, 84%, 65%;
+
+    --clr-neutral-100: 0, 0%, 100%;
+    --clr-neutral-200: 236, 100%, 87%;
+    --clr-neutral-300: 235, 45%, 61%;
+    --clr-neutral-400: 235, 46%, 20%;
+    --clr-neutral-500: 226, 43%, 10%;
+
+    --ff-base: "Rubik", sans-serif;
+
+    --fs-base: 1.125rem;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: hsl(var(--clr-neutral-500));
+}
+
+.dashboard {
+    margin: 4rem 0;
+    display: grid;
+    gap: 1rem;
+    font-family: var(--ff-base);
+    font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
+    font-size: var(--fs-base);
+}
+
+/* Panel with the user info and the buttons to select timeframe */
+
+.dashboard__panel {
+    --border-radius: 15px;
+    background-color: hsl(var(--clr-neutral-400));
+    border-radius: var(--border-radius);
+}
+
+.dashboard__user {
+    background-color: hsl(var(--clr-primary-blue));
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    column-gap: 1rem;
+}
+
+.dashboard__user > img {
+    border-radius: 50%;
+    border: 3px hsl(var(--clr-neutral-100)) solid;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.dashboard__for {
+    color: hsl(var(--clr-neutral-200));
+    font-size: 0.9rem;
+    align-self: self-end;
+}
+
+.dashboard__name {
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.dashboard__buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.dashboard__buttons > button {
+    background-color: transparent;
+    border: none;
+    color: hsl(var(--clr-neutral-300));
+    cursor: pointer;
+}
+
+.dashboard__buttons > button:hover,
+.dashboard__selected {
+    color: hsl(var(--clr-neutral-100)) !important;
+}
+
+/* Dashboard cards */
+
+.dashboard__card {
+    --border-radius: 15px;
+    display: grid;
+    align-items: self-end;
+    border-radius: var(--border-radius);
+}
+
+.card__data {
+    padding: 1.5rem;
+    background-color: hsl(var(--clr-neutral-400));
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.card__hover-effect:hover {
+    background-color: hsla(var(--clr-neutral-300));
+}
+
+.card__type {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+
+.card__menu-img {
+    cursor: pointer;
+    padding: 0.5rem 0 0.5rem 2rem;
+}
+
+.card__menu-img:hover {
+    filter: brightness(2);
+}
+
+.card__info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__type {
+    font-weight: var(--fw-medium);
+    font-size: 0.95rem;
+}
+
+.card__big-number {
+    font-size: 1.7rem;
+}
+
+.card__prev-number {
+    font-size: 0.9rem;
+    color: hsl(var(--clr-neutral-200));
+}
+
+/* Styling for each unique card */
+
+.dashboard__card--work {
+    background-color: hsl(var(--clr-accent-work));
+    background-image: url(images/icon-work.svg);
+    background-repeat: no-repeat;
+    background-position: 97% -10px;
+}
+
+.dashboard__card--play {
+    background-color: hsl(var(--clr-accent-play));
+    background-image: url(images/icon-play.svg);
+    background-repeat: no-repeat;
+    background-position: 97% -10px;
+}
+
+.dashboard__card--study {
+    background-color: hsl(var(--clr-accent-study));
+    background-image: url(images/icon-study.svg);
+    background-repeat: no-repeat;
+    background-position: 97% -10px;
+}
+
+.dashboard__card--exercise {
+    background-color: hsl(var(--clr-accent-exercise));
+    background-image: url(images/icon-exercise.svg);
+    background-repeat: no-repeat;
+    background-position: 97% -10px;
+}
+
+.dashboard__card--social {
+    background-color: hsl(var(--clr-accent-social));
+    background-image: url(images/icon-social.svg);
+    background-repeat: no-repeat;
+    background-position: 97% -10px;
+}
+
+.dashboard__card--self-care {
+    background-color: hsl(var(--clr-accent-self-care));
+    background-image: url(images/icon-self-care.svg);
+    background-repeat: no-repeat;
+    background-position: 97% -10px;
+}
+
+@media (min-width: 1000px) {
+    .dashboard {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .dashboard__panel {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        display: flex;
+        flex-direction: column;
+    }
+    .dashboard__user {
+        flex-grow: 1;
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard__user > img {
+        max-width: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard__name {
+        display: flex;
+        flex-direction: column;
+        font-size: 2.8rem;
+        padding-right: 3rem;
+    }
+
+    .dashboard__buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+        flex-grow: 0;
+        margin-bottom: 0.4rem;
+    }
+
+    .dashboard__card {
+        width: 13rem;
+    }
+
+    .card__big-number {
+        font-size: 3rem;
+    }
+
+    .card__info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
