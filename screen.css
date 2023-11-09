@@ -66,17 +66,22 @@ a {
     --card-radius: 1rem;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    min-height: 100%;
     background-color: var(--very-dark-blue);
     color: #fff;
     font: 400 1rem/1.5 Rubik, sans-serif;
-    margin: 2em 1em;
 }
 
 article {
     display: flex;
     flex-direction: column;
     row-gap: 1.5em;
+    margin: 1.5em;
 }
 
 article > * {
@@ -210,6 +215,7 @@ section a {
     width: 21px;
     background: url(images/icon-ellipsis.svg) right center no-repeat;
     text-indent: 999em;
+    overflow:hidden;
 }
 
 section strong {
