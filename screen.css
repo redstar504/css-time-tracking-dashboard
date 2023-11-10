@@ -142,6 +142,10 @@ nav a {
     line-height: 4em;
 }
 
+nav a#activePeriod {
+    color: #fff;
+}
+
 nav a:hover {
     color: #fff;
     transition: 0.1s;
@@ -223,11 +227,19 @@ section strong {
     font-weight: 300;
 }
 
+section strong b {
+    font-weight: 300;
+}
+
 section small {
     color: var(--pale-blue);
     font-weight: 400;
     vertical-align: middle;
     font-size: .9125em;
+}
+
+section small b {
+    font-weight: 400;
 }
 
 @media (max-width: 48em) {
