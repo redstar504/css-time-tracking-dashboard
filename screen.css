@@ -257,6 +257,7 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin:0 0 1rem;
 }
 
 footer a {
@@ -341,5 +342,6 @@ footer a {
         justify-content: flex-end;
         gap: 0.625rem;
         grid-column: 1 / span 4;
+        margin: 0;
     }
 }
