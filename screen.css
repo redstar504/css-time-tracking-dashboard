@@ -84,7 +84,8 @@ article {
     margin: 5em 1.5em;
 }
 
-article > * {
+article > header,
+article > section {
     background: var(--dark-blue);
     border-radius: var(--card-radius);
 }
@@ -161,37 +162,43 @@ section::before {
     z-index: -1;
     border-radius: var(--card-radius);
     background-repeat: no-repeat;
-    background-position: right 4% top -0.5em;
+    background-position: right 1.5rem top 0;
 }
 
 #work::before {
     background-color: var(--light-red-work);
     background-image: url(images/icon-work.svg);
+    background-position-y: -0.7rem;
 }
 
 #play::before {
     background-color: var(--soft-blue);
     background-image: url(images/icon-play.svg);
+    background-position-y: -0.325rem;
 }
 
 #study::before {
     background-color: var(--light-red-study);
     background-image: url(images/icon-study.svg);
+    background-position-y: -0.5rem;
 }
 
 #exercise::before {
     background-color: var(--lime-green);
     background-image: url(images/icon-exercise.svg);
+    background-position-y: 0;
 }
 
 #social::before {
     background-color: var(--violet);
     background-image: url(images/icon-social.svg);
+    background-position-y: -1rem;
 }
 
 #selfCare::before {
     background-color: var(--soft-orange);
     background-image: url(images/icon-self-care.svg);
+    background-position-y: -0.7rem;
 }
 
 section {
@@ -240,6 +247,21 @@ section small {
 
 section small b {
     font-weight: 400;
+}
+
+footer {
+    color: var(--desaturated-blue);
+    opacity: 0.3;
+    gap: 0.25rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer a {
+    color: var(--desaturated-blue);
+    opacity: 0.5;
 }
 
 @media (max-width: 48em) {
@@ -312,5 +334,12 @@ section small b {
     section > small {
         flex-basis: 100%;
         text-align: left;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0.625rem;
+        grid-column: 1 / span 4;
     }
 }
