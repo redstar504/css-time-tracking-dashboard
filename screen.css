@@ -217,10 +217,6 @@ section:hover {
     color: #000;
 }
 
-section:hover small {
-    color: #000;
-}
-
 section a,
 section small {
     text-align: right;
@@ -239,6 +235,10 @@ section a {
     overflow: hidden;
 }
 
+section:hover a {
+    background-image: url(images/icon-ellipsis-hover.svg);
+}
+
 section strong {
     font-size: 2em;
     font-weight: 300;
@@ -253,6 +253,10 @@ section small {
     font-weight: 400;
     vertical-align: middle;
     font-size: .9125em;
+}
+
+section:hover small {
+    color: #000;
 }
 
 section small b {
