@@ -158,7 +158,7 @@ section::before {
     top: -2.375em;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 2.3em);
     z-index: -1;
     border-radius: var(--card-radius);
     background-repeat: no-repeat;
@@ -209,6 +209,16 @@ section {
     justify-content: space-between;
     margin-top: 2.375em;
     padding: 1.5em 1em;
+    cursor: pointer;
+}
+
+section:hover {
+    backdrop-filter: brightness(50%);
+    color: #000;
+}
+
+section:hover small {
+    color: #000;
 }
 
 section a,
@@ -257,7 +267,7 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin:0 0 1rem;
+    margin: 0 0 1rem;
 }
 
 footer a {
